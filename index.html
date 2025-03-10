@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Прости меня</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #ffd1dc; /* Нежно-розовый фон */
+      font-family: 'Comic Sans MS', sans-serif;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2em;
+      color: #333;
+    }
+    .emoji {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+    .button-container {
+      display: flex;
+      gap: 10px;
+      flex-direction: column;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
+      border: 2px solid #ccc;
+      border-radius: 20px;
+      background-color: #ffebf0;
+      color: #333;
+      transition: all 0.3s ease;
+    }
+    button:hover {
+      background-color: #ffc0cb;
+    }
+    .no-button {
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <h1>Прости меня</h1>
+    <div class="emoji">😢</div>
+    <div class="button-container">
+      <button onclick="showApology()">Да</button>
+      <button class="no-button" onmouseover="moveButton()">Нет</button>
+      <button onclick="showMessage()">Другое</button>
+      <button onclick="forYou()">Для тебя</button>
+    </div>
+  </div>
+
+  <script>
+    function showApology() {
+      alert('Я прошу прощения за свои действия и надеюсь, я смогу это исправить.');
+    }
+
+    function moveButton() {
+      const noButton = document.querySelector('.no-button');
+      const randomX = Math.floor(Math.random() * (window.innerWidth - noButton.clientWidth));
+      const randomY = Math.floor(Math.random() * (window.innerHeight - noButton.clientHeight));
+      noButton.style.position = 'absolute';
+      noButton.style.left = `${randomX}px`;
+      noButton.style.top = `${randomY}px`;
+    }
+
+    function showMessage() {
+      alert('Напиши в Телеграмме сердечко ❤️, если прощаешь и хочешь дальше общаться.');
+    }
+
+    function forYou() {
+      alert(`Я лишь мечтал с тобой общаться,
+Видеть яркость твоих глаз,
+Просыпаясь видеть чат,
+Лишь твой голос заставлял, меня улыбаться каждый день,
+Но глупость сделаное мной,
+Все обрушилось так сразу,
+Но мечтаю все исправить,
+Дай мне глупому один лишь шанс.`);
+    }
+  </script>
+</body>
+</html>
